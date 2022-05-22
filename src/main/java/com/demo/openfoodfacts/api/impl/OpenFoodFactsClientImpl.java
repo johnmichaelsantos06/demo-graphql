@@ -21,11 +21,11 @@ public class OpenFoodFactsClientImpl implements OpenFoodFactsClient {
 	private RestTemplate restTemplate;
 	
 	@Override
-	public OpenFoodFactsResponse getProductDetails(Long id) {
+	public OpenFoodFactsResponse getProductDetails(String id) {
 		String url = BASE_URL + "/product/{id}";
 		
 		Map<String, String> urlParams = new HashMap<>();
-		urlParams.put("id", String.valueOf(id));
+		urlParams.put("id", id);
 
 		ResponseEntity<OpenFoodFactsResponse> response = restTemplate.exchange(url, HttpMethod.GET, null, OpenFoodFactsResponse.class, urlParams);
 

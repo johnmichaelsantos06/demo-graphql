@@ -17,7 +17,7 @@ public class OpenFoodFactsService {
 	private OpenFoodFactsClient openFoodFactsClient;
 	
 	@GraphQLQuery
-    public OpenFoodFactsResponse productDetails(Long id) {
+    public OpenFoodFactsResponse productDetails(String id) {
         return openFoodFactsClient.getProductDetails(id);
     }
 }
